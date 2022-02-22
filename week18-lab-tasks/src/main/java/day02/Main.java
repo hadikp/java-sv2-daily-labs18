@@ -20,5 +20,11 @@ public class Main {
 
         Flyway flyway = Flyway.configure().locations("db/migration/bookstore").dataSource(dataSource).load();
         flyway.migrate();
+        BookRepository bookRepository = new BookRepository(dataSource);
+        //bookRepository.insertBook("Fekete István", "Vuk", 3400, 20);
+        //bookRepository.insertBook("Fekete István", "Téli berek", 3200, 30);
+        System.out.println(bookRepository.findBooksWriter("Fekete"));
+        bookRepository.updatePieces(1L, 55);
+
     }
 }

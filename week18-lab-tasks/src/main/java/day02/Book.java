@@ -35,4 +35,15 @@ public class Book {
     public int getPieces() {
         return pieces;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", writer='" + writer + '\'' +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", pieces=" + pieces +
+                '}';
+    }
 }
