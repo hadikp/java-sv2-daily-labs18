@@ -20,7 +20,7 @@ public class Main {
         }
 
         Flyway flyway = Flyway.configure().locations("db/migration/activity").dataSource(dataSource).load();
-        //flyway.clean();
+        flyway.clean();
         flyway.migrate();
 
         ActivityRepository activityRepository = new ActivityRepository(dataSource);
